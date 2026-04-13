@@ -207,20 +207,6 @@ int main() {
     // Cleanup
     pthread_mutex_destroy(&shared.count_mutex);
     ring_buffer_destroy(&shared.buffer);
- 
 
     return EXIT_SUCCESS;
 }
-
-
-/*
-
-    Modular Design: Separate functions for buffer operations, thread routines, and main logic.
-    Dynamic Memory Management: Uses malloc and free for the ring buffer.
-    Multithreading: Implements multiple producer and consumer threads.
-    Synchronization: Uses mutexes and condition variables to coordinate access to shared data.
-    Error Handling: Checks return values and reports errors.
-    Configurable Parameters: Easily adjustable buffer size, number of threads, and items.
-    Simulated Workload: usleep to mimic variable processing times.
-
-*/   
