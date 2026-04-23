@@ -1,0 +1,57 @@
+Standard C Libraries Commonly Used with MISRA C:
+
+    <stdio.h> – Standard Input/Output functions (e.g., printf, scanf)
+    <stdlib.h> – General utilities (e.g., malloc, free, exit)
+    <string.h> – String handling functions (e.g., memcpy, strcpy)
+    <math.h> – Mathematical functions (e.g., sin, cos, sqrt)
+    <stdbool.h> – Boolean type support (since C99)
+    <stdint.h> – Fixed-width integer types (since C99)
+    <stddef.h> – Definitions like size_t, NULL
+    <limits.h> – Limits of integral types
+    <ctype.h> – Character handling functions
+
+Additional Libraries and Tools:
+
+    Hardware Abstraction Libraries: For embedded systems, hardware-specific libraries are often used, but their compliance with MISRA rules depends on implementation.
+    Static Analysis Tools: Many tools (e.g., PC-lint, Coverity, MISRA C:2012 Toolchains) support checking code against MISRA rules and may include libraries or modules to support compliance verification.
+
+Important Notes:
+
+    While you can use standard libraries, their usage must be compliant with MISRA C rules, which often restrict certain functions or behaviors (e.g., dynamic memory allocation, recursion, certain pointer operations).
+    Many organizations develop or adopt custom or restricted libraries that are verified for MISRA compliance.
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Motor Industry Software Reliability Association Clibrariesfunctionscanintroduceundefined behavior, security vulnerabilities, or portability issues
+//////////////  check every library and every function with request: AI: is library X MISRA secure? is function Y MISRA secure?
+Standard C Library Functions Generally Considered Unsafe or Non-compliant:
+
+    stdlib.h functions:
+        malloc(), calloc(), realloc(), free() — due to dynamic memory management issues, fragmentation, and potential for undefined behavior.
+    string.h functions:
+        strcpy(), strncpy(), strcat(), strncat(), sprintf(), vsprintf(), gets() — because of buffer overflows and unsafe string handling.
+    stdio.h functions:
+        gets() (removed in C11), scanf() (can cause buffer overflows), printf(), fprintf(), sprintf(), vprintf(), vsprintf() — due to format string vulnerabilities and buffer issues.
+    ctype.h functions:
+        isalpha(), isdigit(), etc. — if used improperly, especially with invalid inputs, though generally safe if inputs are sanitized.
+    math.h functions:
+        pow(), sqrt(), log(), sin(), etc. — can produce undefined or implementation-defined behavior for certain inputs.
+    time.h functions:
+        time(), clock(), difftime() — potential for non-deterministic behavior.
+
+Additional Considerations:
+
+    Use of non-standard or implementation-specific functions: These can violate portability and safety guidelines.
+    Functions involving pointer arithmetic or unchecked array indexing: Not specific libraries but relevant for MISRA compliance.
+    Functions with side effects or that modify global state: Also relevant for safe coding.
+
+Summary:
+
+In MISRA C, the focus is on avoiding unsafe functions that can cause undefined behavior, security issues, or portability problems. While MISRA does not explicitly ban entire libraries, 
+it provides rules and guidelines to restrict or recommend alternative safer practices.
+Practical Approach:
+
+    Avoid or restrict the use of dynamic memory functions (malloc(), free()).
+    Avoid unsafe string functions (strcpy(), sprintf(), etc.).
+    Prefer safer alternatives like strncpy(), snprintf(), and careful boundary checking.
+    Use static analysis tools that flag usage of unsafe functions.
+
+Note: The actual restrictions can be context-dependent and may vary based on the specific MISRA C version (e.g., MISRA C:1998, C:2004, C:2012). Always consult the latest MISRA C guidelines
