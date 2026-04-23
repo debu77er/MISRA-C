@@ -1,0 +1,24 @@
+#include <stdio.h>    /* For printf */
+#include <stdlib.h>   /* For exit */
+
+int main(void)
+{
+    /* Print a message to the console */
+    printf("Hello, MISRA C Linux Application!\n");
+    
+    /* Exit the program with success status */
+    return 0;
+}
+
+Key points for MISRA C compliance:
+
+    Use of standard headers (<stdio.h>) for input/output.
+    Avoiding implicit conversions or dangerous casts.
+    Returning an int from main.
+    Keeping functions simple and free of undefined behavior.
+
+
+
+
+
+GOOD COMBINATION: MISRA C + JNI    but can a Java GUI interface be dangerous itself?
