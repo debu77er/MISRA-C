@@ -1,3 +1,15 @@
+////////////////////////////////////////////////////////////
+iostream is generally considered not MISRA-compliant and unsuitable for safety-critical, 
+high-integrity embedded systems, primarily due to dynamic memory allocation, complexity, 
+and non-deterministic behavior. While iostream provides better type safety than stdio, 
+it violates MISRA's rules aimed at predictability.
+
+Several specialized compilers and static analysis tools are designed specifically for MISRA C compliance to ensure 
+safety, security, and reliability in embedded systems. Top choices include TASKING, IAR Systems, 
+and Green Hills Software, which feature built-in MISRA C:2012/2004 checkers. These compilers generate 
+errors or warnings for rule violations during compilation. 
+
+
 Standard C Libraries Commonly Used with MISRA C:
 
     <stdio.h> – Standard Input/Output functions (e.g., printf, scanf)
