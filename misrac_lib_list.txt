@@ -12,6 +12,29 @@ errors or warnings for rule violations during compilation.
                //////////////// the most important thing is tool ///////////////////
 iso 26262
 
+
+    Green Hills MULTI
+        Known for high-quality MISRA C compliance and extensive static analysis capabilities.
+    LDRA Testbed and TBvision
+        Industry-leading tools with strong MISRA C checking, testing, and certification support.
+    PC-lint / FlexeLint (by Gimpel Software)
+        Widely used static analysis tool offering MISRA C rule checks.
+    Coverity (by Synopsys)
+        Advanced static analysis platform with MISRA C compliance options.
+    Klocwork (by Perforce)
+        Static code analysis tool supporting MISRA C standards.
+    Polyspace (by MathWorks)
+        Formal verification tool with MISRA C compliance checks.
+    SCADE Suite (by Ansys)
+        Model-based development environment with MISRA C code generation and verification.
+    Tasking VX-Toolset
+        Specialized compiler with MISRA C validation for embedded systems.
+    IAR Embedded Workbench
+        Popular embedded compiler supporting MISRA C guidelines with static analysis tools.
+    Green Hills Compiler
+        Embedded compiler with MISRA C compliance features.
+
+
 GCC is not inherently MISRA C compliant or "safe" out-of-the-box, as it is a general-purpose compiler designed 
 for performance rather than strict adherence to safety-critical standards like MISRA C. While GCC can be configured 
 with specific flags (e.g., -Wall, -Wextra, -pedantic) to check for violations and a [-Wmisra-c] option exists 
